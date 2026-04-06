@@ -1108,7 +1108,7 @@
         <h2 class="section-title">Parlez-nous de votre projet</h2>
         <p class="section-subtitle">Remplissez le formulaire et nous vous répondons en moins de 2 heures.</p>
 
-        <form action="#" method="POST" autocomplete="on">
+        <form autocomplete="on">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="name">Nom</label>
@@ -1143,6 +1143,10 @@
           <div class="form-group">
             <label class="form-label" for="description">Description du projet</label>
             <textarea class="form-textarea" id="description" name="description" placeholder="Décrivez votre projet..." rows="5"></textarea>
+          </div>
+
+          <div style="display:none" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
           </div>
 
           <button type="submit" class="form-submit">Envoyer la demande <span aria-hidden="true">→</span></button>
@@ -1224,6 +1228,43 @@
           btn.setAttribute('aria-expanded', 'true');
         }
       });
+    });
+  </script>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector("button[type=submit]");
+      const originalText = btn.textContent;
+      btn.textContent = "Envoi en cours...";
+      btn.disabled = true;
+
+      const data = {};
+      new FormData(this).forEach((v, k) => data[k] = v);
+
+      try {
+        const res = await fetch("https://sommetpro-form.tiny-meadow-3008.workers.dev/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (result.success) {
+          this.innerHTML = `<div style="text-align:center;padding:40px 20px;">
+            <div style="font-size:48px;margin-bottom:16px;">✅</div>
+            <h3 style="font-family:var(--font-display);color:var(--forest);margin:0 0 8px">Merci! / Thank you!</h3>
+            <p style="color:var(--charcoal);margin:0">Nous vous contacterons dans les 2 heures.<br>We will contact you within 2 hours.</p>
+          </div>`;
+        } else {
+          alert(result.error || "Une erreur est survenue. / An error occurred.");
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      } catch (err) {
+        alert("Erreur de connexion. Veuillez réessayer. / Connection error. Please try again.");
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
     });
   </script>
 
