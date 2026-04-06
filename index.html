@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sommet Pro — L'expertise locale, le service professionnel | Lachute & Laurentides</title>
+  <meta name="description" content="Services professionnels à Lachute et les Laurentides. Terrain, peinture, rénovation, mécanique. Soumission gratuite en 2h.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    /* ── Custom Properties ── */
+    :root {
+      --forest: #2D4A3E;
+      --forest-light: #3a6154;
+      --forest-dark: #1f3529;
+      --stone: #C4A882;
+      --stone-light: #d4be9e;
+      --stone-dark: #a8906c;
+      --charcoal: #2C2C2C;
+      --cream: #F7F4EF;
+      --cream-dark: #EDE8E0;
+      --near-black: #1A1A1A;
+      --text-secondary: #5a5a5a;
+      --text-tertiary: #7a7a7a;
+      --border-subtle: rgba(0,0,0,0.06);
+
+      --shadow-card: rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.08) 0px 4px 12px;
+      --shadow-hover: rgba(0,0,0,0.04) 0px 0px 0px 1px, rgba(0,0,0,0.06) 0px 4px 12px, rgba(0,0,0,0.12) 0px 8px 24px;
+      --shadow-subtle: rgba(0,0,0,0.03) 0px 1px 3px, rgba(0,0,0,0.06) 0px 2px 8px;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 32px;
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, system-ui, sans-serif;
+
+      --max-width: 1200px;
+      --section-pad: clamp(64px, 10vw, 120px);
+    }
+
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--near-black);
+      background-color: var(--cream);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 40px);
+    }
+
+    /* ── Noise texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.018;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px 256px;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 244, 239, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 16px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .nav-logo svg { width: 32px; height: 32px; }
+
+    .nav-logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--forest);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-phone {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+    }
+    .nav-phone:hover { color: var(--forest); }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--forest);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 10px 24px;
+      border-radius: var(--radius-sm);
+      transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      background: var(--forest-light);
+      box-shadow: var(--shadow-subtle);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      padding: clamp(80px, 14vw, 160px) 0 var(--section-pad);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 120% 80% at 50% 100%, rgba(45,74,62,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 60% at 80% 20%, rgba(196,168,130,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Decorative mountain silhouette */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to top, var(--cream) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 600;
+      font-style: italic;
+      line-height: 1.2;
+      color: var(--forest);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--forest);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding: 16px 36px;
+      border-radius: var(--radius-sm);
+      transition: background 0.25s, box-shadow 0.3s, transform 0.15s;
+    }
+    .hero-cta:hover {
+      background: var(--forest-light);
+      box-shadow: rgba(45,74,62,0.2) 0px 8px 24px;
+      transform: translateY(-2px);
+    }
+    .hero-cta:active { transform: translateY(0); }
+
+    .hero-trust {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-trust-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--stone);
+      display: inline-block;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: var(--section-pad) 0;
+    }
+
+    .section-label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--stone-dark);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 600;
+      text-align: center;
+      color: var(--near-black);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto 56px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 36px 28px 32px;
+      box-shadow: var(--shadow-card);
+      transition: box-shadow 0.3s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+
+    .service-card:nth-child(1) .service-icon { background: rgba(45,74,62,0.1); }
+    .service-card:nth-child(2) .service-icon { background: rgba(196,168,130,0.18); }
+    .service-card:nth-child(3) .service-icon { background: rgba(44,44,44,0.08); }
+    .service-card:nth-child(4) .service-icon { background: rgba(180,100,60,0.1); }
+
+    .service-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--near-black);
+    }
+
+    .service-name-en {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 20px;
+    }
+
+    .service-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--forest);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .service-link:hover {
+      gap: 10px;
+      color: var(--forest-light);
+    }
+    .service-link svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s;
+    }
+    .service-link:hover svg { transform: translateX(2px); }
+
+    /* ── WHY US ── */
+    .why {
+      padding: var(--section-pad) 0;
+      background: #fff;
+      position: relative;
+    }
+
+    .why::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-subtle) 20%, var(--border-subtle) 80%, transparent);
+    }
+    .why::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-subtle) 20%, var(--border-subtle) 80%, transparent);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+
+    .why-item { text-align: center; }
+
+    .why-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .why-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--forest);
+    }
+
+    .why-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--near-black);
+    }
+
+    .why-title-en {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .why-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    /* ── QUOTE FORM ── */
+    .quote {
+      padding: var(--section-pad) 0;
+    }
+
+    .quote-wrapper {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: var(--radius-xl);
+      padding: clamp(32px, 6vw, 56px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .quote-wrapper .section-title,
+    .quote-wrapper .section-label,
+    .quote-wrapper .section-subtitle {
+      text-align: left;
+    }
+
+    .quote-wrapper .section-subtitle {
+      margin: 0 0 40px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+
+    .form-row .form-group { margin-bottom: 0; }
+
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--near-black);
+      margin-bottom: 6px;
+    }
+
+    .form-label span {
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      border-radius: var(--radius-sm);
+      background: var(--cream);
+      color: var(--near-black);
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+      width: 100%;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--forest);
+      box-shadow: 0 0 0 3px rgba(45,74,62,0.1);
+      background: #fff;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235a5a5a' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 6l3.5 4 3.5-4z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--forest);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 14px 24px;
+      border-radius: var(--radius-sm);
+      transition: background 0.25s, box-shadow 0.3s, transform 0.15s;
+      margin-top: 8px;
+    }
+    .form-submit:hover {
+      background: var(--forest-light);
+      box-shadow: rgba(45,74,62,0.15) 0px 6px 20px;
+      transform: translateY(-1px);
+    }
+    .form-submit:active { transform: translateY(0); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.7);
+      padding: 56px 0 40px;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo svg { width: 28px; height: 28px; }
+
+    .footer-logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 24px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-contact-item:hover { color: #fff; }
+
+    .footer-contact-item svg { width: 16px; height: 16px; opacity: 0.6; flex-shrink: 0; }
+
+    .footer-heading {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .footer-list { list-style: none; }
+    .footer-list li { margin-bottom: 10px; }
+    .footer-list a {
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-list a:hover { color: #fff; }
+
+    .footer-bottom {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .nav-phone { display: none; }
+      .nav-inner { height: 60px; }
+      .btn-primary { padding: 8px 18px; font-size: 0.82rem; }
+
+      .hero-trust {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .hero-trust-dot { display: none; }
+
+      .quote-wrapper {
+        border-radius: var(--radius-lg);
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo" aria-label="Sommet Pro — Accueil">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 4L6 24h6l4-8 4 8h6L16 4z" fill="#2D4A3E"/>
+          <path d="M16 4L6 24h6l4-8" fill="#3a6154" opacity="0.6"/>
+          <path d="M10 24l3-6 3 6" fill="#C4A882" opacity="0.5"/>
+        </svg>
+        <span class="nav-logo-text">SOMMET PRO</span>
+      </a>
+      <div class="nav-right">
+        <a href="tel:+14505551234" class="nav-phone">(450) 555-1234</a>
+        <a href="#soumission" class="btn-primary">Soumission gratuite <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>L'expertise locale,<br>le service professionnel.</h1>
+      <p class="hero-sub">
+        Services résidentiels et commerciaux de qualité à Lachute et dans les Laurentides.
+        <br>Quality residential and commercial services in Lachute and the Laurentians.
+      </p>
+      <a href="#soumission" class="hero-cta">
+        Obtenir une soumission gratuite
+        <span aria-hidden="true">→</span>
+      </a>
+      <div class="hero-trust">
+        <span>Fièrement local · Proudly local</span>
+        <span class="hero-trust-dot"></span>
+        <span>Lachute & Laurentides</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="services" id="services">
+    <div class="container">
+      <span class="section-label">Nos services / Our services</span>
+      <h2 class="section-title">Ce que nous faisons de mieux</h2>
+      <p class="section-subtitle">Quatre métiers, une même exigence de qualité.<br>Four trades, one standard of quality.</p>
+
+      <div class="services-grid">
+        <!-- Terrain -->
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <div class="service-name">Terrain</div>
+          <div class="service-name-en">Landscaping</div>
+          <p class="service-desc">Aménagement paysager, entretien saisonnier, tonte et déneigement. Votre terrain, notre fierté.<br><em>Landscaping, seasonal maintenance, mowing & snow removal.</em></p>
+          <a href="#" class="service-link">
+            En savoir plus / Learn more
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <!-- Peinture -->
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <div class="service-name">Peinture</div>
+          <div class="service-name-en">Painting</div>
+          <p class="service-desc">Peinture intérieure et extérieure, teinture de terrasse, finition soignée. La couleur juste, le travail soigné.<br><em>Interior & exterior painting, deck staining, quality finish.</em></p>
+          <a href="#" class="service-link">
+            En savoir plus / Learn more
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <!-- Rénovation -->
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <div class="service-name">Rénovation</div>
+          <div class="service-name-en">Renovation</div>
+          <p class="service-desc">Rénovations résidentielles, cuisines, salles de bain, sous-sols. Construire mieux, durer plus longtemps.<br><em>Residential renos, kitchens, bathrooms, basements.</em></p>
+          <a href="#" class="service-link">
+            En savoir plus / Learn more
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <!-- Mécanique -->
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <div class="service-name">Mécanique</div>
+          <div class="service-name-en">Small Engine Repair</div>
+          <p class="service-desc">Réparation de petits moteurs, tondeuses, souffleuses, VTT. Remis en marche, comme neuf.<br><em>Lawnmowers, snowblowers, ATVs — back in action.</em></p>
+          <a href="#" class="service-link">
+            En savoir plus / Learn more
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY US ── -->
+  <section class="why">
+    <div class="container">
+      <span class="section-label">Pourquoi nous / Why us</span>
+      <h2 class="section-title" style="margin-bottom: 56px;">Un service sur lequel vous pouvez compter</h2>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="why-title">Réponse en 2h</div>
+          <div class="why-title-en">2hr Response</div>
+          <p class="why-desc">On répond vite parce qu'on sait que votre temps est précieux. Soumission gratuite sous 48h.<br><em>Fast response because your time matters. Free quote within 48h.</em></p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="why-title">Travail soigné</div>
+          <div class="why-title-en">Quality Guaranteed</div>
+          <p class="why-desc">Chaque projet est traité avec soin et fierté. Satisfaction garantie, résultats durables.<br><em>Every project with care and pride. Guaranteed satisfaction, lasting results.</em></p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="why-title">100% Local</div>
+          <div class="why-title-en">Proudly Local</div>
+          <p class="why-desc">On habite ici, on travaille ici. Fièrement enracinés à Lachute et dans les Laurentides.<br><em>We live here, we work here. Proudly rooted in Lachute & the Laurentians.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUOTE FORM ── -->
+  <section class="quote" id="soumission">
+    <div class="container">
+      <div class="quote-wrapper">
+        <span class="section-label">Soumission gratuite / Free Quote</span>
+        <h2 class="section-title">Parlez-nous de votre projet</h2>
+        <p class="section-subtitle">Remplissez le formulaire et nous vous répondons en moins de 2 heures.<br><em>Fill out the form and we'll get back to you within 2 hours.</em></p>
+
+        <form action="#" method="POST" autocomplete="on">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Nom <span>/ Name</span></label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Jean Tremblay" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Téléphone <span>/ Phone</span></label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(450) 555-1234" required autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Courriel <span>/ Email</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="jean@exemple.ca" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="service">Service</label>
+            <select class="form-select" id="service" name="service" required>
+              <option value="" disabled selected>Choisir un service / Select a service</option>
+              <option value="terrain">Terrain — Landscaping</option>
+              <option value="peinture">Peinture — Painting</option>
+              <option value="renovation">Rénovation — Renovation</option>
+              <option value="mecanique">Mécanique — Small Engine Repair</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="description">Description <span>/ Project Details</span></label>
+            <textarea class="form-textarea" id="description" name="description" placeholder="Décrivez votre projet... / Describe your project..." rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Envoyer / Send <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 4L6 24h6l4-8 4 8h6L16 4z" fill="#C4A882"/>
+              <path d="M16 4L6 24h6l4-8" fill="#C4A882" opacity="0.6"/>
+              <path d="M10 24l3-6 3 6" fill="#fff" opacity="0.15"/>
+            </svg>
+            <span class="footer-logo-text">SOMMET PRO</span>
+          </div>
+          <p class="footer-tagline">L'expertise locale, le service professionnel.</p>
+          <a href="tel:+14505551234" class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (450) 555-1234
+          </a>
+          <a href="mailto:info@sommetpro.ca" class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+            info@sommetpro.ca
+          </a>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-list">
+            <li><a href="#">Terrain / Landscaping</a></li>
+            <li><a href="#">Peinture / Painting</a></li>
+            <li><a href="#">Rénovation / Renovation</a></li>
+            <li><a href="#">Mécanique / Small Engine</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading">Zone de service</h3>
+          <ul class="footer-list">
+            <li><a href="#">Lachute</a></li>
+            <li><a href="#">Grenville</a></li>
+            <li><a href="#">Brownsburg-Chatham</a></li>
+            <li><a href="#">Saint-André-d'Argenteuil</a></li>
+            <li><a href="#">Laurentides</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Sommet Pro. Tous droits réservés / All rights reserved.</span>
+        <span>sommetpro.ca</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
