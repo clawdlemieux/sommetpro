@@ -413,20 +413,39 @@
       gap: 24px;
     }
 
+    .service-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+      display: block;
+      margin-bottom: 0;
+    }
     .service-card {
       background: #fff;
       border-radius: var(--radius-lg);
-      padding: 36px 28px 32px;
+      padding: 0;
       box-shadow: var(--shadow-card);
       transition: box-shadow 0.3s, transform 0.25s;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
     .service-card:hover {
       box-shadow: var(--shadow-hover);
       transform: translateY(-4px);
     }
 
+    .service-card > *:not(.service-img) {
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+    .service-card > .service-icon {
+      margin-top: 24px;
+    }
+    .service-card > .service-link {
+      padding-bottom: 32px;
+    }
     .service-icon {
       width: 56px;
       height: 56px;
@@ -935,6 +954,7 @@
       <div class="services-grid">
         <!-- Landscaping -->
         <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=500&fit=crop&auto=format&q=80" class="service-img" alt="Professional landscaper at work" loading="lazy" width="800" height="500">
           <div class="service-icon">🌿</div>
           <div class="service-name">Landscaping</div>
           <p class="service-desc">Landscape design, seasonal maintenance, mowing and snow removal. Your property, our pride.</p>
@@ -946,6 +966,7 @@
 
         <!-- Painting -->
         <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=500&fit=crop&auto=format&q=80" class="service-img" alt="Professional painter" loading="lazy" width="800" height="500">
           <div class="service-icon">🎨</div>
           <div class="service-name">Painting</div>
           <p class="service-desc">Interior and exterior painting, deck staining, quality finish. The right colour, the careful work.</p>
@@ -957,6 +978,7 @@
 
         <!-- Renovation -->
         <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=500&fit=crop&auto=format&q=80" class="service-img" alt="Kitchen renovation" loading="lazy" width="800" height="500">
           <div class="service-icon">🏠</div>
           <div class="service-name">Renovation</div>
           <p class="service-desc">Residential renovations, kitchens, bathrooms, basements. Built better, built to last.</p>
@@ -968,6 +990,7 @@
 
         <!-- Small Engine Repair -->
         <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&h=500&fit=crop&auto=format&q=80" class="service-img" alt="Mechanic at work" loading="lazy" width="800" height="500">
           <div class="service-icon">🔧</div>
           <div class="service-name">Small Engine Repair</div>
           <p class="service-desc">Lawnmowers, snowblowers, ATVs, chainsaws and generators. Back in action, good as new.</p>
