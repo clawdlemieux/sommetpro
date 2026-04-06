@@ -6,8 +6,8 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
   <title>Sommet Pro | Paysagement, Peinture, Rénovation & Mécanique — Lachute & Laurentides</title>
-  <meta name="description" content="Services professionnels à Lachute et les Laurentides: paysagement, peinture, rénovation, mécanique petits moteurs. Soumission gratuite en 2h.">
-  <meta name="keywords" content="paysagement Lachute, peinture Laurentides, rénovation Brownsburg, mécanique petits moteurs, Sommet Pro, Grenville, Saint-André-d'Argenteuil, Argenteuil, services résidentiels, soumission gratuite">
+  <meta name="description" content="Services professionnels à Lachute et les Laurentides: paysagement, peinture, rénovation, mécanique petits moteurs. Soumission gratuite en 2h. Professional local services in Lachute & Laurentians.">
+  <meta name="keywords" content="paysagement Lachute, peinture Laurentides, rénovation Brownsburg, mécanique petits moteurs, landscaping Lachute, painting Laurentians, renovation Brownsburg-Chatham, small engine repair, Sommet Pro, Grenville, Saint-André-d'Argenteuil, Argenteuil, services résidentiels, soumission gratuite">
 
   <!-- Canonical & Alternate Languages -->
   <link rel="canonical" href="https://www.sommetpro.ca/">
@@ -37,7 +37,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Sommet Pro",
-    "description": "Services locaux professionnels: paysagement, peinture, rénovation et mécanique petits moteurs. Desservant Lachute, Grenville, Brownsburg, Saint-André, Laurentides.",
+    "description": "Services locaux professionnels: paysagement, peinture, rénovation et mécanique petits moteurs. Serving Lachute, Grenville, Brownsburg, Saint-André, Laurentides.",
     "url": "https://www.sommetpro.ca",
     "telephone": "",
     "email": "info@sommetpro.ca",
@@ -62,11 +62,7 @@
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "07:00",
       "closes": "18:00"
-    },
-    "availableLanguage": [
-      { "@type": "Language", "name": "French" },
-      { "@type": "Language", "name": "English" }
-    ]
+    }
   }
   </script>
 
@@ -75,7 +71,6 @@
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "inLanguage": "fr-CA",
     "mainEntity": [
       {
         "@type": "Question",
@@ -226,28 +221,6 @@
       gap: 24px;
     }
 
-    .lang-switch {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-    .lang-switch a {
-      color: var(--text-secondary);
-      padding: 2px 6px;
-      border-radius: 4px;
-      transition: color 0.2s;
-    }
-    .lang-switch a:hover { color: var(--forest); }
-    .lang-switch a.active {
-      font-weight: 700;
-      color: var(--forest);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .lang-switch .lang-sep { color: var(--text-tertiary); }
-
     .nav-phone {
       font-weight: 500;
       font-size: 0.9rem;
@@ -293,6 +266,7 @@
       pointer-events: none;
     }
 
+    /* Decorative mountain silhouette */
     .hero::after {
       content: '';
       position: absolute;
@@ -444,8 +418,15 @@
       font-family: var(--font-heading);
       font-size: 1.25rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 4px;
       color: var(--near-black);
+    }
+
+    .service-name-en {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+      font-weight: 500;
     }
 
     .service-desc {
@@ -531,8 +512,15 @@
       font-family: var(--font-heading);
       font-size: 1.15rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 4px;
       color: var(--near-black);
+    }
+
+    .why-title-en {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      margin-bottom: 12px;
     }
 
     .why-desc {
@@ -883,7 +871,7 @@
   <!-- ── NAV ── -->
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="/" class="nav-logo" aria-label="Sommet Pro — Accueil">
+      <a href="#" class="nav-logo" aria-label="Sommet Pro — Accueil">
         <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M16 4L6 24h6l4-8 4 8h6L16 4z" fill="#2D4A3E"/>
           <path d="M16 4L6 24h6l4-8" fill="#3a6154" opacity="0.6"/>
@@ -892,11 +880,6 @@
         <span class="nav-logo-text">SOMMET PRO</span>
       </a>
       <div class="nav-right">
-        <div class="lang-switch">
-          <a href="/" class="active" aria-label="Français">FR</a>
-          <span class="lang-sep">|</span>
-          <a href="/en/" aria-label="English">EN</a>
-        </div>
         <a href="tel:+14505551234" class="nav-phone">(450) 555-1234</a>
         <a href="#soumission" class="btn-primary">Soumission gratuite <span aria-hidden="true">→</span></a>
       </div>
@@ -909,13 +892,14 @@
       <h1>L'expertise locale,<br>le service professionnel.</h1>
       <p class="hero-sub">
         Services résidentiels et commerciaux de qualité à Lachute et dans les Laurentides.
+        <br>Quality residential and commercial services in Lachute and the Laurentians.
       </p>
       <a href="#soumission" class="hero-cta">
         Obtenir une soumission gratuite
         <span aria-hidden="true">→</span>
       </a>
       <div class="hero-trust">
-        <span>Fièrement local</span>
+        <span>Fièrement local · Proudly local</span>
         <span class="hero-trust-dot"></span>
         <span>Lachute & Laurentides</span>
       </div>
@@ -925,18 +909,19 @@
   <!-- ── SERVICES ── -->
   <section class="services" id="services">
     <div class="container">
-      <span class="section-label">Nos services</span>
+      <span class="section-label">Nos services / Our services</span>
       <h2 class="section-title">Ce que nous faisons de mieux</h2>
-      <p class="section-subtitle">Quatre métiers, une même exigence de qualité.</p>
+      <p class="section-subtitle">Quatre métiers, une même exigence de qualité.<br>Four trades, one standard of quality.</p>
 
       <div class="services-grid">
         <!-- Terrain -->
         <div class="service-card">
           <div class="service-icon">🌿</div>
           <div class="service-name">Terrain</div>
-          <p class="service-desc">Aménagement paysager, entretien saisonnier, tonte et déneigement. Votre terrain, notre fierté.</p>
-          <a href="#soumission" class="service-link">
-            En savoir plus
+          <div class="service-name-en">Landscaping</div>
+          <p class="service-desc">Aménagement paysager, entretien saisonnier, tonte et déneigement. Votre terrain, notre fierté.<br><em>Landscaping, seasonal maintenance, mowing & snow removal.</em></p>
+          <a href="#" class="service-link">
+            En savoir plus / Learn more
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -945,9 +930,10 @@
         <div class="service-card">
           <div class="service-icon">🎨</div>
           <div class="service-name">Peinture</div>
-          <p class="service-desc">Peinture intérieure et extérieure, teinture de terrasse, finition soignée. La couleur juste, le travail soigné.</p>
-          <a href="#soumission" class="service-link">
-            En savoir plus
+          <div class="service-name-en">Painting</div>
+          <p class="service-desc">Peinture intérieure et extérieure, teinture de terrasse, finition soignée. La couleur juste, le travail soigné.<br><em>Interior & exterior painting, deck staining, quality finish.</em></p>
+          <a href="#" class="service-link">
+            En savoir plus / Learn more
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -956,9 +942,10 @@
         <div class="service-card">
           <div class="service-icon">🏠</div>
           <div class="service-name">Rénovation</div>
-          <p class="service-desc">Rénovations résidentielles, cuisines, salles de bain, sous-sols. Construire mieux, durer plus longtemps.</p>
-          <a href="#soumission" class="service-link">
-            En savoir plus
+          <div class="service-name-en">Renovation</div>
+          <p class="service-desc">Rénovations résidentielles, cuisines, salles de bain, sous-sols. Construire mieux, durer plus longtemps.<br><em>Residential renos, kitchens, bathrooms, basements.</em></p>
+          <a href="#" class="service-link">
+            En savoir plus / Learn more
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -966,10 +953,11 @@
         <!-- Mécanique -->
         <div class="service-card">
           <div class="service-icon">🔧</div>
-          <div class="service-name">Mécanique petits moteurs</div>
-          <p class="service-desc">Réparation de petits moteurs, tondeuses, souffleuses, VTT. Remis en marche, comme neuf.</p>
-          <a href="#soumission" class="service-link">
-            En savoir plus
+          <div class="service-name">Mécanique</div>
+          <div class="service-name-en">Small Engine Repair</div>
+          <p class="service-desc">Réparation de petits moteurs, tondeuses, souffleuses, VTT. Remis en marche, comme neuf.<br><em>Lawnmowers, snowblowers, ATVs — back in action.</em></p>
+          <a href="#" class="service-link">
+            En savoir plus / Learn more
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -980,7 +968,7 @@
   <!-- ── WHY US ── -->
   <section class="why">
     <div class="container">
-      <span class="section-label">Pourquoi nous</span>
+      <span class="section-label">Pourquoi nous / Why us</span>
       <h2 class="section-title" style="margin-bottom: 56px;">Un service sur lequel vous pouvez compter</h2>
 
       <div class="why-grid">
@@ -989,7 +977,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <div class="why-title">Réponse en 2h</div>
-          <p class="why-desc">On répond vite parce qu'on sait que votre temps est précieux. Soumission gratuite sous 48h.</p>
+          <div class="why-title-en">2hr Response</div>
+          <p class="why-desc">On répond vite parce qu'on sait que votre temps est précieux. Soumission gratuite sous 48h.<br><em>Fast response because your time matters. Free quote within 48h.</em></p>
         </div>
 
         <div class="why-item">
@@ -997,7 +986,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <div class="why-title">Travail soigné</div>
-          <p class="why-desc">Chaque projet est traité avec soin et fierté. Satisfaction garantie, résultats durables.</p>
+          <div class="why-title-en">Quality Guaranteed</div>
+          <p class="why-desc">Chaque projet est traité avec soin et fierté. Satisfaction garantie, résultats durables.<br><em>Every project with care and pride. Guaranteed satisfaction, lasting results.</em></p>
         </div>
 
         <div class="why-item">
@@ -1005,7 +995,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <div class="why-title">100% Local</div>
-          <p class="why-desc">On habite ici, on travaille ici. Fièrement enracinés à Lachute et dans les Laurentides.</p>
+          <div class="why-title-en">Proudly Local</div>
+          <p class="why-desc">On habite ici, on travaille ici. Fièrement enracinés à Lachute et dans les Laurentides.<br><em>We live here, we work here. Proudly rooted in Lachute & the Laurentians.</em></p>
         </div>
       </div>
     </div>
@@ -1014,11 +1005,12 @@
   <!-- ── ABOUT (GEO — Generative Engine Optimization) ── -->
   <section class="about-geo" id="about-sommet-pro" aria-label="À propos de Sommet Pro">
     <div class="container">
-      <span class="section-label">À propos</span>
+      <span class="section-label">À propos / About</span>
       <h2 class="section-title">Sommet Pro — Votre partenaire local</h2>
       <div class="about-geo-content">
         <p>Sommet Pro est une entreprise locale de services professionnels basée à Lachute, dans la région des Laurentides, Québec. Fondée pour répondre aux besoins des propriétaires de la région d'Argenteuil, Sommet Pro offre quatre services principaux: paysagement résidentiel, peinture intérieure et extérieure, rénovation résidentielle, et réparation de petits moteurs (tondeuses, souffleuses, tronçonneuses, génératrices).</p>
         <p>La zone de service comprend Lachute, Grenville-sur-la-Rouge, Brownsburg-Chatham, Saint-André-d'Argenteuil et les municipalités environnantes des Laurentides. Sommet Pro se distingue par sa réponse rapide (moins de 2 heures), son travail soigné et son ancrage profond dans la communauté locale.</p>
+        <p><em>Sommet Pro is a local professional services company based in Lachute, in the Laurentians region of Quebec. Serving homeowners across the Argenteuil area, Sommet Pro provides four core services: residential landscaping, interior and exterior painting, home renovation, and small engine repair (lawnmowers, snowblowers, chainsaws, generators). Service area includes Lachute, Grenville-sur-la-Rouge, Brownsburg-Chatham, Saint-André-d'Argenteuil, and surrounding Laurentians municipalities.</em></p>
       </div>
     </div>
   </section>
@@ -1026,9 +1018,9 @@
   <!-- ── FAQ ── -->
   <section class="faq" id="faq" aria-label="Questions fréquentes">
     <div class="container">
-      <span class="section-label">Questions fréquentes</span>
+      <span class="section-label">Questions fréquentes / FAQ</span>
       <h2 class="section-title">Vos questions, nos réponses</h2>
-      <p class="section-subtitle">Tout ce que vous devez savoir avant de nous contacter.</p>
+      <p class="section-subtitle">Tout ce que vous devez savoir avant de nous contacter.<br>Everything you need to know before reaching out.</p>
 
       <div class="faq-list">
         <div class="faq-item">
@@ -1037,7 +1029,7 @@
             <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l4 4 4-4"/></svg></span>
           </button>
           <div class="faq-answer" id="faq-1" role="region">
-            <div class="faq-answer-inner">Sommet Pro dessert Lachute, Grenville-sur-la-Rouge, Brownsburg-Chatham, Saint-André-d'Argenteuil et l'ensemble de la région des Laurentides au Québec.</div>
+            <div class="faq-answer-inner">Sommet Pro dessert Lachute, Grenville-sur-la-Rouge, Brownsburg-Chatham, Saint-André-d'Argenteuil et l'ensemble de la région des Laurentides au Québec.<br><em>Sommet Pro serves Lachute, Grenville, Brownsburg-Chatham, Saint-André-d'Argenteuil, and the greater Laurentians region in Quebec.</em></div>
           </div>
         </div>
 
@@ -1047,7 +1039,7 @@
             <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l4 4 4-4"/></svg></span>
           </button>
           <div class="faq-answer" id="faq-2" role="region">
-            <div class="faq-answer-inner">Nous offrons quatre services principaux: paysagement résidentiel (aménagement, tonte, déneigement), peinture intérieure et extérieure, rénovation résidentielle (cuisines, salles de bain, sous-sols) et réparation de petits moteurs (tondeuses, souffleuses, tronçonneuses, génératrices).</div>
+            <div class="faq-answer-inner">Nous offrons quatre services principaux: paysagement résidentiel (aménagement, tonte, déneigement), peinture intérieure et extérieure, rénovation résidentielle (cuisines, salles de bain, sous-sols) et réparation de petits moteurs (tondeuses, souffleuses, tronçonneuses, génératrices).<br><em>We offer four core services: residential landscaping, interior & exterior painting, home renovation, and small engine repair.</em></div>
           </div>
         </div>
 
@@ -1057,7 +1049,7 @@
             <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l4 4 4-4"/></svg></span>
           </button>
           <div class="faq-answer" id="faq-3" role="region">
-            <div class="faq-answer-inner">Remplissez le formulaire en ligne sur notre site ou appelez-nous directement. Nous garantissons une réponse en moins de 2 heures durant les heures d'affaires.</div>
+            <div class="faq-answer-inner">Remplissez le formulaire en ligne sur notre site ou appelez-nous directement. Nous garantissons une réponse en moins de 2 heures durant les heures d'affaires.<br><em>Fill out the online form on our website or call us directly. We guarantee a response within 2 hours during business hours.</em></div>
           </div>
         </div>
 
@@ -1067,7 +1059,7 @@
             <span class="faq-icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5l4 4 4-4"/></svg></span>
           </button>
           <div class="faq-answer" id="faq-4" role="region">
-            <div class="faq-answer-inner">Oui, Sommet Pro est fièrement basée à Lachute, Québec. Nous sommes enracinés dans la communauté d'Argenteuil et desservons les municipalités environnantes des Laurentides.</div>
+            <div class="faq-answer-inner">Oui, Sommet Pro est fièrement basée à Lachute, Québec. Nous sommes enracinés dans la communauté d'Argenteuil et desservons les municipalités environnantes des Laurentides.<br><em>Yes, Sommet Pro is proudly based in Lachute, Quebec. We are rooted in the Argenteuil community and serve surrounding Laurentians municipalities.</em></div>
           </div>
         </div>
       </div>
@@ -1078,44 +1070,44 @@
   <section class="quote" id="soumission">
     <div class="container">
       <div class="quote-wrapper">
-        <span class="section-label">Soumission gratuite</span>
+        <span class="section-label">Soumission gratuite / Free Quote</span>
         <h2 class="section-title">Parlez-nous de votre projet</h2>
-        <p class="section-subtitle">Remplissez le formulaire et nous vous répondons en moins de 2 heures.</p>
+        <p class="section-subtitle">Remplissez le formulaire et nous vous répondons en moins de 2 heures.<br><em>Fill out the form and we'll get back to you within 2 hours.</em></p>
 
         <form action="#" method="POST" autocomplete="on">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="name">Nom</label>
+              <label class="form-label" for="name">Nom <span>/ Name</span></label>
               <input class="form-input" type="text" id="name" name="name" placeholder="Jean Tremblay" required autocomplete="name">
             </div>
             <div class="form-group">
-              <label class="form-label" for="phone">Téléphone</label>
+              <label class="form-label" for="phone">Téléphone <span>/ Phone</span></label>
               <input class="form-input" type="tel" id="phone" name="phone" placeholder="(450) 555-1234" required autocomplete="tel">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="email">Courriel</label>
+            <label class="form-label" for="email">Courriel <span>/ Email</span></label>
             <input class="form-input" type="email" id="email" name="email" placeholder="jean@exemple.ca" required autocomplete="email">
           </div>
 
           <div class="form-group">
             <label class="form-label" for="service">Service</label>
             <select class="form-select" id="service" name="service" required>
-              <option value="" disabled selected>Choisir un service</option>
-              <option value="terrain">Terrain (Paysagement)</option>
-              <option value="peinture">Peinture</option>
-              <option value="renovation">Rénovation</option>
-              <option value="mecanique">Mécanique petits moteurs</option>
+              <option value="" disabled selected>Choisir un service / Select a service</option>
+              <option value="terrain">Terrain — Landscaping</option>
+              <option value="peinture">Peinture — Painting</option>
+              <option value="renovation">Rénovation — Renovation</option>
+              <option value="mecanique">Mécanique — Small Engine Repair</option>
             </select>
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="description">Description du projet</label>
-            <textarea class="form-textarea" id="description" name="description" placeholder="Décrivez votre projet..." rows="5"></textarea>
+            <label class="form-label" for="description">Description <span>/ Project Details</span></label>
+            <textarea class="form-textarea" id="description" name="description" placeholder="Décrivez votre projet... / Describe your project..." rows="5"></textarea>
           </div>
 
-          <button type="submit" class="form-submit">Envoyer la demande <span aria-hidden="true">→</span></button>
+          <button type="submit" class="form-submit">Envoyer / Send <span aria-hidden="true">→</span></button>
         </form>
       </div>
     </div>
@@ -1153,27 +1145,27 @@
         <div>
           <h3 class="footer-heading">Services</h3>
           <ul class="footer-list">
-            <li><a href="#services">Terrain</a></li>
-            <li><a href="#services">Peinture</a></li>
-            <li><a href="#services">Rénovation</a></li>
-            <li><a href="#services">Mécanique petits moteurs</a></li>
+            <li><a href="#">Terrain / Landscaping</a></li>
+            <li><a href="#">Peinture / Painting</a></li>
+            <li><a href="#">Rénovation / Renovation</a></li>
+            <li><a href="#">Mécanique / Small Engine</a></li>
           </ul>
         </div>
 
         <div>
           <h3 class="footer-heading">Zone de service</h3>
           <ul class="footer-list">
-            <li><a href="#about-sommet-pro">Lachute</a></li>
-            <li><a href="#about-sommet-pro">Grenville</a></li>
-            <li><a href="#about-sommet-pro">Brownsburg-Chatham</a></li>
-            <li><a href="#about-sommet-pro">Saint-André-d'Argenteuil</a></li>
-            <li><a href="#about-sommet-pro">Laurentides</a></li>
+            <li><a href="#">Lachute</a></li>
+            <li><a href="#">Grenville</a></li>
+            <li><a href="#">Brownsburg-Chatham</a></li>
+            <li><a href="#">Saint-André-d'Argenteuil</a></li>
+            <li><a href="#">Laurentides</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Sommet Pro. Tous droits réservés.</span>
+        <span>© 2026 Sommet Pro. Tous droits réservés / All rights reserved.</span>
         <span>sommetpro.ca</span>
       </div>
     </div>
