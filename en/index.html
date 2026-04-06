@@ -1326,10 +1326,11 @@
         });
         const result = await res.json();
         if (result.success) {
-          this.innerHTML = `<div style="text-align:center;padding:40px 20px;">
+          document.querySelector('.quote-wrapper').innerHTML = `<div style="text-align:center;padding:60px 40px;">
             <div style="font-size:48px;margin-bottom:16px;">✅</div>
-            <h3 style="font-family:var(--font-display);color:var(--forest);margin:0 0 8px">Merci! / Thank you!</h3>
-            <p style="color:var(--charcoal);margin:0">Nous vous contacterons dans les 2 heures.<br>We will contact you within 2 hours.</p>
+            <h3 style="font-family:var(--font-display);color:var(--forest);margin:0 0 8px">Thank you!</h3>
+            <p style="color:var(--charcoal);margin:0 0 16px">We've received your request and will contact you within 2 hours.</p>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin:0">Questions? Call us at <a href="tel:+14509005040" style="color:var(--forest);">(450) 900-5040</a></p>
           </div>`;
         } else {
           alert(result.error || "Une erreur est survenue. / An error occurred.");
