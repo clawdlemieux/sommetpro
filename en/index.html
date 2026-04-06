@@ -294,7 +294,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to bottom, rgba(247,244,239,0.82) 0%, rgba(247,244,239,0.70) 50%, rgba(247,244,239,0.88) 100%);
+        linear-gradient(to bottom, rgba(247,244,239,0.3) 0%, rgba(247,244,239,0.2) 50%, rgba(247,244,239,0.3) 100%);
       pointer-events: none;
     }
 
@@ -314,6 +314,13 @@
       text-align: center;
       max-width: 800px;
       margin: 0 auto;
+      background: rgba(247, 244, 239, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 48px 56px;
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
     }
 
     .hero h1 {
