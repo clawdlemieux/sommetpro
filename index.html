@@ -899,6 +899,36 @@
       line-height: 1.6;
       color: rgba(255,255,255,0.7);
     }
+
+    /* ── SERVICE AREA ── */
+    .service-area { padding: 80px 0; background: var(--cream); }
+    .service-area h2 { font-family: var(--font-heading); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 600; text-align: center; color: var(--near-black); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .service-area .section-sub { text-align: center; color: var(--text-secondary); font-size: 1rem; max-width: 500px; margin: 0 auto; }
+    .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+    .area-primary, .area-secondary { background: white; border-radius: 12px; padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .area-primary h3, .area-secondary h3 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--forest); margin: 0 0 16px; }
+    .area-primary ul, .area-secondary ul { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .area-primary li, .area-secondary li { background: rgba(45,74,62,0.08); color: var(--forest); padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
+    .area-note { font-size: 0.85rem; color: var(--text-secondary); font-style: italic; margin: 0; }
+    @media (max-width: 640px) { .area-grid { grid-template-columns: 1fr; } }
+
+    /* ── FORM TRUST ── */
+    .form-trust { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+    .form-trust span { font-size: 0.85rem; color: var(--forest); font-weight: 500; }
+
+    /* ── MOBILE CTA BAR ── */
+    .mobile-cta-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: white; border-top: 1px solid rgba(0,0,0,0.1); padding: 12px 16px; display: flex; gap: 12px; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
+    .mobile-cta-call { flex: 1; text-align: center; padding: 12px; background: var(--cream); color: var(--forest); border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.95rem; border: 1px solid var(--forest); }
+    .mobile-cta-quote { flex: 2; text-align: center; padding: 12px; background: var(--forest); color: white; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+    @media (min-width: 768px) { .mobile-cta-bar { display: none !important; } }
+
+    /* ── FOOTER HOURS ── */
+    .footer-hours { font-size: 0.85rem; opacity: 0.7; margin: 4px 0; }
+
+    /* ── WHY EXPERT LINK ── */
+    .why-expert { text-align: center; margin-top: 48px; }
+    .why-expert a { font-size: 0.95rem; font-weight: 600; color: var(--forest); transition: color 0.2s; }
+    .why-expert a:hover { color: var(--forest-light); }
   </style>
 </head>
 <body>
@@ -920,7 +950,7 @@
           <span class="lang-sep">|</span>
           <a href="/en/" aria-label="English">EN</a>
         </div>
-        <a href="tel:+18025481879" class="nav-phone">(802) 548-1879</a>
+        <a href="tel:+14509005040" class="nav-phone">(450) 900-5040</a>
         <a href="#soumission" class="btn-primary">Évaluation sans engagement <span aria-hidden="true">→</span></a>
       </div>
     </div>
@@ -960,7 +990,7 @@
           <div class="service-name">Terrain</div>
           <p class="service-desc">Aménagement paysager, entretien saisonnier, tonte et déneigement. Votre terrain, notre fierté.</p>
           <a href="#soumission" class="service-link">
-            En savoir plus
+            Obtenir un prix →
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -971,7 +1001,7 @@
           <div class="service-name">Peinture</div>
           <p class="service-desc">Peinture intérieure et extérieure, teinture de terrasse, finition soignée. La couleur juste, le travail soigné.</p>
           <a href="#soumission" class="service-link">
-            En savoir plus
+            Obtenir un prix →
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -982,7 +1012,7 @@
           <div class="service-name">Rénovation</div>
           <p class="service-desc">Rénovations résidentielles, cuisines, salles de bain, sous-sols. Construire mieux, durer plus longtemps.</p>
           <a href="#soumission" class="service-link">
-            En savoir plus
+            Obtenir un prix →
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -993,7 +1023,7 @@
           <div class="service-name">Mécanique petits moteurs</div>
           <p class="service-desc">Réparation de petits moteurs, tondeuses, souffleuses, VTT. Remis en marche, comme neuf.</p>
           <a href="#soumission" class="service-link">
-            En savoir plus
+            Obtenir un prix →
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -1032,6 +1062,9 @@
           <p class="why-desc">On habite ici, on travaille ici. Enracinés dans la communauté d'Argenteuil depuis le premier jour.</p>
         </div>
       </div>
+      <div class="why-expert">
+        <a href="#soumission">Parler à un expert →</a>
+      </div>
     </div>
   </section>
 
@@ -1043,6 +1076,33 @@
       <div class="about-geo-content">
         <p>Sommet Pro est une entreprise locale de services professionnels basée à Lachute, dans la région des Laurentides, Québec. Fondée pour répondre aux besoins des propriétaires de la région d'Argenteuil, Sommet Pro offre quatre services principaux: paysagement résidentiel, peinture intérieure et extérieure, rénovation résidentielle, et réparation de petits moteurs (tondeuses, souffleuses, tronçonneuses, génératrices).</p>
         <p>La zone de service comprend Lachute, Grenville-sur-la-Rouge, Brownsburg-Chatham, Saint-André-d'Argenteuil et les municipalités environnantes des Laurentides. Sommet Pro se distingue par sa réponse rapide (moins de 2 heures), son travail soigné et son ancrage profond dans la communauté locale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE AREA ── -->
+  <section class="service-area" id="zone-service">
+    <div class="container">
+      <span class="section-label">Zone de service</span>
+      <h2>Nous desservons toute la région</h2>
+      <p class="section-sub">Basés à Lachute, nous intervenons dans toute la MRC d'Argenteuil et les Laurentides environnantes.</p>
+      <div class="area-grid">
+        <div class="area-primary">
+          <h3>MRC d'Argenteuil — Zone principale</h3>
+          <ul>
+            <li>Lachute</li><li>Brownsburg-Chatham</li><li>Grenville-sur-la-Rouge</li>
+            <li>Grenville</li><li>Saint-André-d'Argenteuil</li><li>Mille-Isles</li>
+            <li>Gore</li><li>Harrington</li><li>Wentworth</li><li>Carillon</li><li>Calumet</li>
+          </ul>
+        </div>
+        <div class="area-secondary">
+          <h3>Laurentides — Zone étendue</h3>
+          <ul>
+            <li>Saint-Sauveur</li><li>Sainte-Adèle</li><li>Morin-Heights</li>
+            <li>Saint-Jérôme</li><li>Mirabel</li><li>Deux-Montagnes</li>
+          </ul>
+          <p class="area-note">Vous ne voyez pas votre municipalité? Contactez-nous — nous considérons tous les projets.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1103,7 +1163,7 @@
     <div class="container">
       <div class="quote-wrapper">
         <span class="section-label">Évaluation sans engagement</span>
-        <h2 class="section-title">Parlez-nous de votre projet</h2>
+        <h2 class="section-title">Réservez votre évaluation gratuite</h2>
         <p class="section-subtitle">Remplissez le formulaire et nous vous répondons en moins de 2 heures.</p>
 
         <form autocomplete="on">
@@ -1114,7 +1174,7 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="phone">Téléphone</label>
-              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(802) 548-1879" required autocomplete="tel">
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(450) 900-5040" required autocomplete="tel">
             </div>
           </div>
 
@@ -1147,6 +1207,11 @@
             <input type="text" name="website" tabindex="-1" autocomplete="off">
           </div>
 
+          <div class="form-trust">
+            <span>✓ Sans engagement</span>
+            <span>✓ Réponse en 2h</span>
+            <span>✓ 100% local</span>
+          </div>
           <button type="submit" class="form-submit">Envoyer la demande <span aria-hidden="true">→</span></button>
         </form>
       </div>
@@ -1172,9 +1237,9 @@
             Lachute, QC, Canada<br>
             info@sommetpro.ca
           </div>
-          <a href="tel:+18025481879" class="footer-contact-item">
+          <a href="tel:+14509005040" class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            (802) 548-1879
+            (450) 900-5040
           </a>
           <a href="mailto:info@sommetpro.ca" class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
@@ -1204,6 +1269,7 @@
         </div>
       </div>
 
+      <p class="footer-hours">Lun–Ven 7h–18h · Sam 8h–14h · Urgences disponibles</p>
       <div class="footer-bottom">
         <span>© 2026 Sommet Pro. Tous droits réservés.</span>
         <span>sommetpro.ca</span>
@@ -1265,6 +1331,11 @@
       }
     });
   </script>
+
+  <div class="mobile-cta-bar" id="mobile-cta">
+    <a href="tel:+14509005040" class="mobile-cta-call">📞 Appeler</a>
+    <a href="#soumission" class="mobile-cta-quote">Évaluation gratuite →</a>
+  </div>
 
 </body>
 </html>
