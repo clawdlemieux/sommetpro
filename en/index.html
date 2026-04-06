@@ -113,9 +113,11 @@
   }
   </script>
 
+  <meta name="theme-color" content="#2D4A3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"></noscript>
   <style>
     /* ── Custom Properties ── */
     :root {
@@ -130,7 +132,7 @@
       --cream-dark: #EDE8E0;
       --near-black: #1A1A1A;
       --text-secondary: #5a5a5a;
-      --text-tertiary: #7a7a7a;
+      --text-tertiary: #636363;
       --border-subtle: rgba(0,0,0,0.06);
 
       --shadow-card: rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.08) 0px 4px 12px;
@@ -281,6 +283,7 @@
       position: relative;
       padding: clamp(80px, 14vw, 160px) 0 var(--section-pad);
       overflow: hidden;
+      min-height: 480px;
     }
 
     .hero::before {
@@ -686,7 +689,7 @@
     .footer-tagline {
       font-size: 0.85rem;
       font-style: italic;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.65);
       margin-bottom: 24px;
     }
 
@@ -726,7 +729,7 @@
       justify-content: space-between;
       align-items: center;
       font-size: 0.8rem;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.6);
     }
 
     /* ── Responsive ── */
@@ -874,7 +877,7 @@
       margin-top: 20px;
       font-size: 0.85rem;
       line-height: 1.6;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.7);
     }
   </style>
 </head>
@@ -1100,7 +1103,7 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="address">Address <span style="color:#999;font-size:12px;font-weight:400;">(optional)</span></label>
+            <label class="form-label" for="address">Address <span style="color:var(--text-tertiary);font-size:12px;font-weight:400;">(optional)</span></label>
             <input class="form-input" type="text" id="address" name="address" placeholder="123 Main St, Lachute" autocomplete="street-address">
           </div>
           <div class="form-group">
