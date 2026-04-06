@@ -1,15 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
-  <!-- Background transparent -->
-
-  <!-- Mountain Icon -->
-  <g transform="translate(10, 8)">
-    <!-- Back peak (shorter, wider) - Warm Stone -->
-    <polygon points="18,72 48,18 78,72" fill="#C4A882"/>
-    <!-- Front peak (taller, narrower) - Forest Green -->
-    <polygon points="32,72 58,8 84,72" fill="#2D4A3E"/>
+<svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mountain icon -->
+  <g transform="translate(8, 8)">
+    <svg viewBox="0 0 32 32" width="64" height="64">
+      <path d="M16 4L6 24h6l4-8 4 8h6L16 4z" fill="#2D4A3E"/>
+      <path d="M16 4L6 24h6l4-8" fill="#3a6154" opacity="0.6"/>
+      <path d="M10 24l3-6 3 6" fill="#C4A882" opacity="0.5"/>
+    </svg>
   </g>
-
   <!-- Wordmark -->
-  <text x="110" y="58" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="38" fill="#2D4A3E" letter-spacing="5">SOMMET</text>
-  <text x="330" y="58" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="38" fill="#2D4A3E" letter-spacing="5">PRO</text>
+  <text x="84" y="36" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#2D4A3E" letter-spacing="3">SOMMET</text>
+  <text x="84" y="60" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#C4A882" letter-spacing="3">PRO</text>
 </svg>
