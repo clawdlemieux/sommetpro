@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Circle background -->
+  <circle cx="100" cy="100" r="100" fill="#2D4A3E"/>
+
+  <!-- Mountain peaks centered in circle -->
+  <g transform="translate(40, 40)">
+    <!-- Back peak (shorter, wider) - Warm Stone -->
+    <polygon points="10,110 50,25 90,110" fill="#C4A882"/>
+    <!-- Front peak (taller, narrower) - White -->
+    <polygon points="30,110 62,10 94,110" fill="#FFFFFF"/>
+  </g>
+</svg>

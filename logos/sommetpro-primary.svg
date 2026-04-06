@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Background transparent -->
+
+  <!-- Mountain Icon -->
+  <g transform="translate(10, 8)">
+    <!-- Back peak (shorter, wider) - Warm Stone -->
+    <polygon points="18,72 48,18 78,72" fill="#C4A882"/>
+    <!-- Front peak (taller, narrower) - Forest Green -->
+    <polygon points="32,72 58,8 84,72" fill="#2D4A3E"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="110" y="58" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="38" fill="#2D4A3E" letter-spacing="5">SOMMET</text>
+  <text x="330" y="58" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="38" fill="#2D4A3E" letter-spacing="5">PRO</text>
+</svg>

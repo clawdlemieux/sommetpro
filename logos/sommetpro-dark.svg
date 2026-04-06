@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Dark background -->
+  <rect width="400" height="100" fill="#2D4A3E" rx="4"/>
+
+  <!-- Mountain Icon -->
+  <g transform="translate(10, 8)">
+    <!-- Back peak (shorter, wider) - Warm Stone -->
+    <polygon points="18,72 48,18 78,72" fill="#C4A882"/>
+    <!-- Front peak (taller, narrower) - White -->
+    <polygon points="32,72 58,8 84,72" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Wordmark - White on dark -->
+  <text x="110" y="58" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="38" fill="#FFFFFF" letter-spacing="5">SOMMET</text>
+  <text x="330" y="58" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="38" fill="#FFFFFF" letter-spacing="5">PRO</text>
+</svg>
